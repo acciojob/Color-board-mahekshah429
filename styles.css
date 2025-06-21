@@ -14,7 +14,7 @@ h1 {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
-  grid-gap: 2px;
+  gap: 2px;
   max-width: 1000px;
   margin: auto;
 }
@@ -22,6 +22,6 @@ h1 {
 .square {
   width: 25px;
   height: 25px;
-  background-color: #1d1d1d;
-  transition: background-color 1s ease;
+  background-color: rgb(29, 29, 29); /* Required by test */
+  transition: background-color 1s ease; /* Smooth fade */
 }

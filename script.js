@@ -1,30 +1,27 @@
-const container = document.getElementById("container");
-const colors = ["#e74c3c", "#8e44ad", "#3498db", "#e67e22", "#2ecc71"];
-
-const SQUARES = 800;
-
-for (let i = 0; i < SQUARES; i++) {
-  const square = document.createElement("div");
-  square.classList.add("square");
-
-  square.addEventListener("mouseover", () => setColor(square));
-  square.addEventListener("mouseout", () => removeColor(square));
-
-  container.appendChild(square);
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-function setColor(element) {
-  const color = getRandomColor();
-  element.style.backgroundColor = color;
+h1 {
+  margin-bottom: 20px;
 }
 
-function removeColor(element) {
-  // On mouse out, color will transition back due to CSS transition
-  setTimeout(() => {
-    element.style.backgroundColor = "#1d1d1d";
-  }, 1000);
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+  gap: 2px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
+.square {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(29, 29, 29); /* Required by test */
+  transition: background-color 1s ease; /* Smooth fade */
 }
